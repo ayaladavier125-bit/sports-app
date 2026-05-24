@@ -1,20 +1,50 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 健身与膳食管理应用 (Sports & Nutrition App)
 
-# Run and deploy your AI Studio app
+这是一个精心设计的智能健身打卡与膳食能量追踪系统，专为 iOS 原生轻量化体验而生。无论是手机还是电脑浏览器，您都可以随时通过以下公网链接访问：
 
-This contains everything you need to run your app locally.
+## 🌐 公网直接访问地址
 
-View your app in AI Studio: https://ai.studio/apps/bd758c7a-43a1-4ac3-a42d-974f496b4fea
+您可以直接在手机、平板或电脑浏览器中打开以下链接，无须登录 AI Studio 即可独立访问：
 
-## Run Locally
+* **直接预览版 (推荐手机/电脑浏览器单独打开):**
+  👉 [**https://ais-pre-orzct6g3g563454lkv6vl7-402577773623.us-east1.run.app**](https://ais-pre-orzct6g3g563454lkv6vl7-402577773623.us-east1.run.app)
+* **实时开发演练版:**
+  👉 [**https://ais-dev-orzct6g3g563454lkv6vl7-402577773623.us-east1.run.app**](https://ais-dev-orzct6g3g563454lkv6vl7-402577773623.us-east1.run.app)
 
-**Prerequisites:**  Node.js
+---
 
+## ✨ 核心特色与功能说明
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **界面字体调大与自适应布局**: 
+   - 调整了全站排版，放大了标题与主要数据信息的文字，使中老年群体或手机屏幕较小的用户也能一目了然。
+   - 保持了简洁典雅的 iOS 风范并适配了各大视网膜高密度屏幕。
+
+2. **iOS 指针悬浮式底部导航栏**: 
+   - 升级为了磨砂玻璃半透明柔和微影效果的悬浮卡片导航，整体质感高级，贴合当下全面屏移动设备的滑动逻辑。
+   
+3. **健康控制面板**:
+   - 智能分析卡路里平衡收支：预算大卡 − 摄入大卡 + 运动消耗 = 剩余可用大卡。
+   - 今日三大核心营养素占比实时图形（蛋白质、碳水化合物、脂肪），数据可视。
+   - 智能积木补水杯功能：动态追加 250ml/500ml。
+   - 自定义体重监测曲线与重力浮动预警。
+
+4. **运动打卡挑战**:
+   - 超高自由度地添加运动打卡事件并配置强度阶梯（高、中、低）。
+   - 智能任务大卡 check-in 行为锁（步数、拉伸、睡眠、碳水习惯等核心日常习惯管理）。
+
+5. **膳食膳卡计算器**:
+   - 精细区分早、中、晚、加餐等四大常规餐饮场景。
+   - 配置最接地气的家庭餐食/增肌精选常备卡池，可无痛一键添加。
+   - 集成智能宏计算器。
+
+6. **身体指标与深色模式 (BMI)**:
+   - 支持极速暗色夜间模式切换。
+   - 高拟合度的 BMI 指标图表，支持身体参数档案信息编辑。
+
+---
+
+## 📱 手机端访问指导
+1. 用手机的长按功能复制上面的 `直接预览版` 网址：  
+   `https://ais-pre-orzct6g3g563454lkv6vl7-402577773623.us-east1.run.app`
+2. 用手机自带的浏览器（例如 iOS Safari，安卓 Chrome 或微信浏览器）粘贴打开。
+3. 推荐使用系统的 **“添加到主屏幕”** 功能，可直接将该应用作为独立无缝隙的全屏 WebApp 使用！
