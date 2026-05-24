@@ -82,18 +82,18 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
       {/* 1. Header with add action button */}
       <div className="flex justify-between items-center px-1">
         <div>
-          <h1 className="text-2xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
+          <h1 className="text-3xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
             健身打卡
           </h1>
-          <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mt-0.5">
             今日累计训练 {totalDuration} 分钟
           </p>
         </div>
         <button
           onClick={() => setShowLogModal(true)}
-          className="p-3 bg-red-500 hover:bg-red-600 active:scale-95 transition-all text-white rounded-2xl flex items-center gap-1.5 font-bold text-xs shadow-md shadow-red-500/20"
+          className="p-3.5 bg-red-500 hover:bg-red-600 active:scale-95 transition-all text-white rounded-2xl flex items-center gap-1.5 font-bold text-sm shadow-md shadow-red-500/20"
         >
-          <Plus size={15} /> 记一次训练
+          <Plus size={16} /> 记一次训练
         </button>
       </div>
 
@@ -101,21 +101,21 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-rose-50 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900/40 p-4 rounded-3xl">
           <div className="flex items-center gap-2 mb-2 text-rose-600 dark:text-rose-400">
-            <Flame size={16} />
-            <span className="text-xs font-bold font-sans">累计燃脂</span>
+            <Flame size={18} />
+            <span className="text-sm font-bold font-sans">累计燃脂</span>
           </div>
-          <div className="text-2xl font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">
-            {totalCalories} <span className="text-xs font-sans text-zinc-400 font-medium ml-0.5">kcal</span>
+          <div className="text-3xl font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">
+            {totalCalories} <span className="text-sm font-sans text-zinc-400 font-medium ml-0.5">kcal</span>
           </div>
         </div>
 
         <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 p-4 rounded-3xl">
           <div className="flex items-center gap-2 mb-2 text-amber-600 dark:text-amber-400">
-            <Clock size={16} />
-            <span className="text-xs font-bold font-sans">活动时间</span>
+            <Clock size={18} />
+            <span className="text-sm font-bold font-sans">活动时间</span>
           </div>
-          <div className="text-2xl font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">
-            {totalDuration} <span className="text-xs font-sans text-zinc-400 font-medium ml-0.5">min</span>
+          <div className="text-3xl font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">
+            {totalDuration} <span className="text-sm font-sans text-zinc-400 font-medium ml-0.5">min</span>
           </div>
         </div>
       </div>
@@ -266,8 +266,8 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
             <Activity size={18} />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-zinc-800 dark:text-zinc-200">健康活力打卡挑战</h4>
-            <p className="text-[11px] text-zinc-500">已连续打卡 <span className="text-rose-500 font-bold font-mono">{currentStreak}</span> 天，超越了 88% 的健友</p>
+            <h4 className="text-base font-bold text-zinc-800 dark:text-zinc-200">健康活力打卡挑战</h4>
+            <p className="text-xs text-zinc-500 mt-0.5">已连续打卡 <span className="text-rose-500 font-bold font-mono text-sm">{currentStreak}</span> 天，超越了 88% 的健友</p>
           </div>
         </div>
         <div className="w-10 h-10 rounded-full border border-rose-100 dark:border-rose-900 bg-rose-50/50 dark:bg-rose-950/10 flex items-center justify-center">
@@ -277,11 +277,11 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
 
       {/* 5. Daily Task Challenge checkboxes */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-3xl p-5 space-y-4">
-        <div className="flex justify-between items-center">
-          <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
+        <div className="flex justify-between items-center bg-zinc-50/20 dark:bg-transparent">
+          <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
             <Sparkles size={16} className="text-amber-500" /> 今日微行动大卡 check-in
           </h3>
-          <span className="text-[10px] font-mono font-bold text-zinc-400 bg-zinc-50 dark:bg-zinc-800/60 px-2.5 py-1 rounded-full border border-zinc-100 dark:border-zinc-800">
+          <span className="text-xs font-mono font-bold text-zinc-400 bg-zinc-50 dark:bg-zinc-800/60 px-2.5 py-1 rounded-full border border-zinc-100 dark:border-zinc-800">
             {completedTaskCount} / 4
           </span>
         </div>
@@ -295,15 +295,15 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
             >
               <div className="shrink-0">
                 {task.done ? (
-                  <CheckCircle2 size={19} className="text-emerald-500 fill-emerald-500/10" />
+                  <CheckCircle2 size={20} className="text-emerald-500 fill-emerald-500/10" />
                 ) : (
-                  <div className="w-5 h-5 rounded-full border-2 border-zinc-300 dark:border-zinc-600" />
+                  <div className="w-5.5 h-5.5 rounded-full border-2 border-zinc-300 dark:border-zinc-600" />
                 )}
               </div>
-              <span className={`text-xs font-semibold flex-1 ${task.done ? 'line-through text-zinc-400 dark:text-zinc-600' : 'text-zinc-700 dark:text-zinc-300'}`}>
+              <span className={`text-sm font-semibold flex-1 ${task.done ? 'line-through text-zinc-400 dark:text-zinc-600' : 'text-zinc-700 dark:text-zinc-300'}`}>
                 {task.label}
               </span>
-              <span className="text-[10px] font-medium text-zinc-400">{task.unit}</span>
+              <span className="text-xs font-medium text-zinc-400">{task.unit}</span>
             </div>
           ))}
         </div>
@@ -311,7 +311,7 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
 
       {/* 6. Gym Log list history */}
       <div className="space-y-3">
-        <h3 className="text-xs uppercase font-semibold tracking-wider text-zinc-400 px-1">打卡轨迹健身 History</h3>
+        <h3 className="text-sm uppercase font-semibold tracking-wider text-zinc-400 px-1">打卡轨迹健身 History</h3>
         
         {workouts.length > 0 ? (
           <div className="space-y-3">
@@ -321,17 +321,17 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
                 className="bg-white dark:bg-zinc-900 border border-zinc-100/80 dark:border-zinc-800 p-4 rounded-3xl flex justify-between items-center group shadow-2xs hover:border-zinc-200 dark:hover:border-zinc-700/60 transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center text-rose-500">
-                    <Dumbbell size={16} />
+                  <div className="w-11 h-11 rounded-2xl bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center text-rose-500">
+                    <Dumbbell size={18} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-zinc-800 dark:text-zinc-200">{log.name}</h4>
-                    <div className="flex items-center gap-1.5 text-[9px] text-zinc-400 font-mono mt-0.5 font-medium uppercase">
+                    <h4 className="text-sm font-bold text-zinc-800 dark:text-zinc-200">{log.name}</h4>
+                    <div className="flex items-center gap-2 text-xs text-zinc-400 font-mono mt-0.5 font-medium uppercase">
                       <span>{log.type}</span>
                       <span>•</span>
                       <span>{log.duration} min</span>
                       <span>•</span>
-                      <span className={`px-1.5 py-0.5 rounded-full border leading-none text-[8px] ${
+                      <span className={`px-2 py-0.5 rounded-full border leading-none text-[9.5px] ${
                         log.intensity === 'hard' 
                           ? 'border-rose-100 text-rose-500 bg-rose-50/50 dark:border-rose-950/20 dark:bg-rose-950/10' 
                           : log.intensity === 'medium'
@@ -346,22 +346,22 @@ export const FitnessTracker: React.FC<FitnessTrackerProps> = ({
 
                 <div className="flex items-center gap-3">
                   <div className="text-right">
-                    <div className="text-xs font-black font-mono text-zinc-800 dark:text-zinc-200">-{log.caloriesBurned}</div>
-                    <div className="text-[9px] text-zinc-400 font-mono">kcal</div>
+                    <div className="text-sm font-black font-mono text-zinc-800 dark:text-zinc-200">-{log.caloriesBurned}</div>
+                    <div className="text-xs text-zinc-400 font-mono">kcal</div>
                   </div>
                   <button
                     onClick={() => onRemoveWorkout(log.id)}
                     className="p-2 text-zinc-300 hover:text-red-500 active:scale-95 transition-all"
                     title="删除"
                   >
-                    <Trash2 size={14} />
+                    <Trash2 size={15} />
                   </button>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="py-12 text-center text-xs text-zinc-400 bg-zinc-50 dark:bg-zinc-850/20 rounded-3xl border border-dashed border-zinc-200 dark:border-zinc-850">
+          <div className="py-12 text-center text-sm text-zinc-400 bg-zinc-50 dark:bg-zinc-850/20 rounded-3xl border border-dashed border-zinc-200 dark:border-zinc-850">
             今天还没有运动打卡。开始你的第一次锻炼吧！
           </div>
         )}

@@ -211,7 +211,7 @@ export default function App() {
           </div>
 
           {/* Immersive view scroll port content */}
-          <div className="flex-1 overflow-y-auto px-5 pt-3 pb-24 scrollbar-hidden">
+          <div className="flex-1 overflow-y-auto px-5 pt-3 pb-28 scrollbar-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -264,8 +264,8 @@ export default function App() {
             </AnimatePresence>
           </div>
 
-          {/* iOS Bottom navigation tabs bar */}
-          <div className="absolute bottom-0 inset-x-0 h-20 bg-white/95 dark:bg-[#1C1C1E]/95 border-t border-[#E5E5EA] dark:border-[#2C2C2E] backdrop-blur-md flex justify-around items-center px-4 pt-1 pb-4 z-40 select-none">
+          {/* iOS Floating bottom navigation tabs bar */}
+          <div className="absolute bottom-4 inset-x-4 h-16 bg-white/95 dark:bg-[#1C1C1E]/95 border border-[#E5E5EA] dark:border-[#2C2C2E] rounded-2xl shadow-xl shadow-zinc-950/10 dark:shadow-black/40 backdrop-blur-md flex justify-around items-center px-2 z-40 select-none">
             {tabs.map((tab) => {
               const TabIcon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -276,18 +276,18 @@ export default function App() {
                   className="flex flex-col items-center justify-center py-1 flex-1 relative active:scale-95 transition-transform"
                 >
                   <motion.div
-                    className={`p-1.5 rounded-xl transition-colors ${
+                    className={`p-1 rounded-xl transition-colors ${
                       isActive 
                         ? 'text-zinc-900 dark:text-white' 
                         : 'text-zinc-400 dark:text-zinc-500'
                     }`}
                   >
-                    <TabIcon size={20} className={isActive ? "stroke-[2.5px]" : "stroke-[2px]"} />
+                    <TabIcon size={22} className={isActive ? "stroke-[2.5px]" : "stroke-[2px]"} />
                   </motion.div>
-                  <span className={`text-[9.5px] font-bold tracking-wide leading-none ${
+                  <span className={`text-[11px] font-bold tracking-wide leading-none ${
                     isActive 
                       ? 'text-zinc-900 dark:text-white font-extrabold' 
-                      : 'text-zinc-400 dark:text-zinc-500 font-medium'
+                      : 'text-zinc-400 dark:text-zinc-500 font-medium font-sans'
                   }`}>
                     {tab.label}
                   </span>

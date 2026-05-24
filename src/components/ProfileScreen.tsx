@@ -65,10 +65,10 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
       {/* 1. Header with styling */}
       <div className="flex justify-between items-center px-1">
         <div>
-          <h1 className="text-2xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
+          <h1 className="text-3xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
             个人主页
           </h1>
-          <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mt-0.5">
             您的个人身体参数及打卡目标
           </p>
         </div>
@@ -79,7 +79,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
           className="p-3 bg-zinc-100 dark:bg-zinc-850 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors text-zinc-700 dark:text-zinc-300 rounded-2xl flex items-center justify-center shadow-xs"
           title="切换深色模式"
         >
-          {dark ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} />}
+          {dark ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} />}
         </button>
       </div>
 
@@ -89,36 +89,36 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
           <User size={32} />
         </div>
         <div>
-          <h2 className="text-lg font-black text-zinc-900 dark:text-zinc-100">{profile.name}</h2>
-          <span className="text-xs font-bold font-sans text-blue-600 dark:text-blue-400 uppercase tracking-wide bg-blue-50 dark:bg-blue-950/20 px-2.5 py-0.5 rounded-full border border-blue-100/40 dark:border-blue-900/30">
+          <h2 className="text-xl font-black text-zinc-900 dark:text-zinc-100">{profile.name}</h2>
+          <span className="text-xs font-extrabold font-sans text-blue-600 dark:text-blue-400 uppercase tracking-wide bg-blue-50 dark:bg-blue-950/20 px-3.5 py-1 rounded-full border border-blue-100/40 dark:border-blue-900/30 mt-1 block max-w-max">
             {profile.goal === 'lose' ? '减脂瘦身' : profile.goal === 'gain' ? '增肌增重' : '保持健康'}
           </span>
-        </div>
+         </div>
       </div>
 
       {/* 3. BMI index dynamic calculator widget details */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-3xl p-5 space-y-4">
-        <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
-          <Heart size={16} className="text-rose-500" /> 身体健康指数 (BMI)
+        <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+          <Heart size={18} className="text-rose-500" /> 身体健康指数 (BMI)
         </h3>
 
         <div className="grid grid-cols-2 gap-4 items-center font-sans">
           <div className="p-4 bg-zinc-50 dark:bg-zinc-950/30 border border-zinc-100 dark:border-zinc-800 rounded-2xl text-center">
-            <span className="text-[10px] text-zinc-400 font-semibold uppercase block">当前计算指数</span>
-            <span className="text-3xl font-black font-mono text-zinc-800 dark:text-zinc-100 leading-tight">
+            <span className="text-xs text-zinc-400 font-bold uppercase block mb-1">当前计算指数</span>
+            <span className="text-4xl font-black font-mono text-zinc-800 dark:text-zinc-100 leading-tight">
               {bmi}
             </span>
-            <span className={`text-[10px] font-bold block px-2 py-0.5 rounded-full mt-2 mx-auto max-w-max ${bmiStatus.color}`}>
+            <span className={`text-xs font-extrabold block px-3 py-1 rounded-full mt-2 mx-auto max-w-max ${bmiStatus.color}`}>
               {bmiStatus.label}
             </span>
           </div>
 
-          <div className="text-xs space-y-1.5 text-zinc-500 dark:text-zinc-400 leading-relaxed">
+          <div className="text-sm space-y-1.5 text-zinc-500 dark:text-zinc-400 leading-relaxed">
             <div className="flex justify-between">
               <span>正常指标范围:</span>
               <span className="font-bold text-zinc-700 dark:text-zinc-300 font-mono">18.5 - 23.9</span>
             </div>
-            <p className="text-[10px] text-zinc-450 mt-1">
+            <p className="text-[11px] text-zinc-450 mt-1">
               BMI 是根据身高、体重计算得到的科学指数。建议将您的 BMI 保持在正常科学区间，能够更有效地抵御各类型慢性疾病。
             </p>
           </div>
@@ -128,10 +128,10 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
       {/* 4. Settings body with expandable form actions */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-3xl overflow-hidden divide-y divide-zinc-50 dark:divide-zinc-800/80">
         <div className="p-5">
-          <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 mb-4">基本健康参数设置</h3>
+          <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-200 mb-4">基本健康参数设置</h3>
           
           {isEditing ? (
-            <form onSubmit={handleSave} className="space-y-4 font-sans text-xs">
+            <form onSubmit={handleSave} className="space-y-4 font-sans text-sm">
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <span className="text-zinc-400 font-bold block">名字</span>
@@ -139,7 +139,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                     type="text"
                     value={name}
                     onChange={e => setName(e.target.value)}
-                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850"
+                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850 text-sm"
                   />
                 </div>
                 <div className="space-y-1">
@@ -148,7 +148,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                     type="number"
                     value={height}
                     onChange={e => setHeight(parseInt(e.target.value) || 170)}
-                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850"
+                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850 text-sm"
                   />
                 </div>
                 <div className="space-y-1">
@@ -158,7 +158,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                     step="0.1"
                     value={weight}
                     onChange={e => setWeight(parseFloat(e.target.value) || 70)}
-                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850"
+                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850 text-sm"
                   />
                 </div>
                 <div className="space-y-1">
@@ -168,7 +168,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                     step="0.1"
                     value={weightGoal}
                     onChange={e => setWeightGoal(parseFloat(e.target.value) || 65)}
-                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850"
+                    className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 p-2.5 rounded-xl text-zinc-850 text-sm"
                   />
                 </div>
               </div>
@@ -190,7 +190,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
               </div>
             </form>
           ) : (
-            <div className="space-y-3.5 text-xs text-zinc-650 font-medium">
+            <div className="space-y-3.5 text-sm text-zinc-650 font-medium">
               <div className="flex justify-between py-1.5 border-b border-zinc-50 dark:border-zinc-850">
                 <span className="text-zinc-400">名字 profile name</span>
                 <span className="text-zinc-800 dark:text-zinc-200 font-bold">{profile.name}</span>
@@ -210,7 +210,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
 
               <button
                 onClick={() => setIsEditing(true)}
-                className="w-full py-3 bg-zinc-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 rounded-xl text-center font-bold font-sans active:scale-98 transition-transform mt-2 block"
+                className="w-full py-3.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 rounded-xl text-center font-bold font-sans active:scale-98 transition-transform mt-2 block"
               >
                 编辑身体档案资料
               </button>
@@ -219,9 +219,9 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
         </div>
       </div>
 
-      {/* 5. Utility commands options */}
+      { {/* 5. Utility commands options */} }
       <div className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-3xl p-5 space-y-4">
-        <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200">应用管理</h3>
+        <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-200">应用管理</h3>
         
         <div className="space-y-3 text-xs">
           <div className="bg-orange-50/50 dark:bg-orange-950/20 border border-orange-100/40 dark:border-orange-900/40 p-3.5 rounded-2xl flex gap-3 items-center">

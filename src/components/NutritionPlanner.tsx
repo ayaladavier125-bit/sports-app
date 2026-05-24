@@ -198,10 +198,10 @@ export const NutritionPlanner: React.FC<NutritionPlannerProps> = ({
       {/* 1. Top Section - Custom iOS Title & Action row */}
       <div className="flex justify-between items-center px-1">
         <div>
-          <h1 className="text-2xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
+          <h1 className="text-3xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
             膳食能量
           </h1>
-          <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mt-0.5">
             今日已记录 {foods.length} 个餐食项目
           </p>
         </div>
@@ -209,9 +209,9 @@ export const NutritionPlanner: React.FC<NutritionPlannerProps> = ({
           {/* TDEE Calculator toggle */}
           <button
             onClick={() => setShowCalculator(!showCalculator)}
-            className="p-3 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700/80 transition-all text-zinc-800 dark:text-zinc-200 rounded-2xl flex items-center justify-center gap-1 font-bold text-xs"
+            className="p-3.5 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700/80 transition-all text-zinc-800 dark:text-zinc-200 rounded-2xl flex items-center justify-center gap-1 font-bold text-sm"
           >
-            <Calculator size={15} /> 智能宏计算
+            <Calculator size={16} /> 智能宏计算
           </button>
           
           <button
@@ -219,9 +219,9 @@ export const NutritionPlanner: React.FC<NutritionPlannerProps> = ({
               setSelectedPreset(FOOD_PRESETS[0]);
               setShowAddFoodModal(true);
             }}
-            className="p-3 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all text-white rounded-2xl flex items-center gap-1 font-bold text-xs shadow-md shadow-blue-500/25"
+            className="p-3.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all text-white rounded-2xl flex items-center gap-1 font-bold text-sm shadow-md shadow-blue-500/25"
           >
-            <Plus size={15} /> 记饮食
+            <Plus size={16} /> 记饮食
           </button>
         </div>
       </div>
@@ -581,27 +581,27 @@ export const NutritionPlanner: React.FC<NutritionPlannerProps> = ({
               className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800/80 rounded-3xl p-5 space-y-3 shadow-2xs"
             >
               {/* Card headers holding subtotals */}
-              <div className="flex justify-between items-center text-xs border-b border-zinc-50 dark:border-zinc-800 pb-2">
-                <div className="flex items-center gap-1.5 font-bold text-zinc-800 dark:text-zinc-200">
-                  <span className="text-base">{sect.icon}</span>
-                  <span>{sect.name}</span>
+              <div className="flex justify-between items-center text-sm border-b border-zinc-50 dark:border-zinc-800 pb-2">
+                <div className="flex items-center gap-2 font-bold text-zinc-850 dark:text-zinc-200">
+                  <span className="text-lg">{sect.icon}</span>
+                  <span className="text-sm font-extrabold">{sect.name}</span>
                 </div>
-                <span className="font-mono font-black text-zinc-800 dark:text-zinc-200">
-                  {mealStats.calories} <span className="text-[9px] text-zinc-405 font-medium">kcal</span>
+                <span className="font-mono font-black text-sm text-zinc-900 dark:text-zinc-100">
+                  {mealStats.calories} <span className="text-xs text-zinc-400 font-medium">kcal</span>
                 </span>
               </div>
 
               {/* Items listing inside meal */}
               {mealStats.items.length > 0 ? (
-                <div className="space-y-2 text-xs">
+                <div className="space-y-2 text-sm">
                   {mealStats.items.map((item) => (
                     <div 
                       key={item.id} 
-                      className="flex justify-between items-center bg-zinc-50 dark:bg-zinc-950/20 p-3 rounded-2xl group transition-all border border-transparent hover:border-zinc-200/40"
+                      className="flex justify-between items-center bg-zinc-50 dark:bg-zinc-950/20 p-3.5 rounded-2xl group transition-all border border-transparent hover:border-zinc-200/40"
                     >
                       <div>
-                        <h4 className="font-bold text-zinc-800 dark:text-zinc-200 leading-none mb-1.5">{item.name}</h4>
-                        <div className="flex items-center gap-2 text-[9px] text-zinc-400 font-mono font-medium">
+                        <h4 className="font-bold text-sm text-zinc-900 dark:text-zinc-100 leading-none mb-1.5">{item.name}</h4>
+                        <div className="flex items-center gap-2.5 text-xs text-zinc-400 font-mono font-semibold">
                           <span>{item.portionGrams}g</span>
                           <span>•</span>
                           <span className="text-orange-500">P:{item.protein}g</span>
@@ -613,22 +613,22 @@ export const NutritionPlanner: React.FC<NutritionPlannerProps> = ({
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <span className="text-xs font-bold font-mono text-zinc-800 dark:text-zinc-200">
-                          {item.calories} <span className="text-[9px] text-zinc-400 font-medium">kcal</span>
+                        <span className="text-sm font-bold font-mono text-zinc-900 dark:text-zinc-200">
+                          {item.calories} <span className="text-xs text-zinc-400 font-medium font-sans">kcal</span>
                         </span>
                         <button
                           onClick={() => onRemoveFood(item.id)}
                           className="p-1 px-2 text-zinc-300 hover:text-red-500 rounded-md transition-all active:scale-95"
                           title="删除餐食"
                         >
-                          <Trash2 size={13} />
+                          <Trash2 size={15} />
                         </button>
                       </div>
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="py-5 text-center text-[11px] text-zinc-400">
+                <div className="py-6 text-center text-xs text-zinc-400">
                   暂无记录... 点击右上角“记饮食”来添加吧！
                 </div>
               )}

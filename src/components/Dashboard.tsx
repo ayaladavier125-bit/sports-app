@@ -257,15 +257,15 @@ export const Dashboard: React.FC<DashboardProps> = ({
       {/* 1. Header with motivational greeting */}
       <div className="flex justify-between items-center px-1">
         <div>
-          <h1 className="text-2xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
+          <h1 className="text-3xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
             健身与膳食
           </h1>
-          <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mt-0.5">
             {new Date().toLocaleDateString('zh-CN', { weekday: 'long', month: 'long', day: 'numeric' })}
           </p>
         </div>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold border border-emerald-100 dark:border-emerald-900/40">
-          <CheckCircle2 size={13} />
+        <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 text-sm font-bold border border-emerald-100 dark:border-emerald-900/40">
+          <CheckCircle2 size={15} />
           <span>iOS 原生轻量化</span>
         </div>
       </div>
@@ -287,23 +287,23 @@ export const Dashboard: React.FC<DashboardProps> = ({
         <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-blue-500 rounded-full blur-3xl opacity-25 pointer-events-none" />
 
         <div className="relative">
-          <h3 className="text-xs uppercase font-semibold tracking-widest text-zinc-400 mb-4 flex items-center gap-1.5">
-            <Flame size={14} className="text-rose-500" /> 卡路里平衡收支
+          <h3 className="text-sm uppercase font-semibold tracking-widest text-zinc-400 mb-4 flex items-center gap-1.5">
+            <Flame size={16} className="text-rose-500" /> 卡路里平衡收支
           </h3>
 
           <div className="grid grid-cols-2 gap-4 items-center">
             {/* Left large remaining section */}
             <div>
-              <div className="text-4xl font-black font-mono tracking-tight text-zinc-50 leading-none">
+              <div className="text-5xl font-black font-mono tracking-tight text-zinc-50 leading-none">
                 {remainingCalories >= 0 ? remainingCalories : 0}
               </div>
-              <div className="text-[11px] font-medium text-zinc-400 mt-1.5">
+              <div className="text-xs font-semibold text-zinc-405 text-zinc-400 mt-2">
                 {remainingCalories >= 0 ? '剩余可摄入大卡' : '超出推荐上限'}
               </div>
             </div>
 
             {/* Right formula calculations */}
-            <div className="space-y-2 border-l border-zinc-800 pl-4 font-mono text-xs text-zinc-300">
+            <div className="space-y-2 border-l border-zinc-800 pl-4 font-mono text-sm text-zinc-300">
               <div className="flex justify-between">
                 <span className="text-zinc-400 font-sans">目标预算:</span>
                 <span className="font-bold">{targetCalories} kcal</span>
@@ -334,18 +334,18 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
       {/* 4. Three Macro Nutrients Sliders */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-5 rounded-3xl space-y-4">
-        <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200">今日核心营养素比例</h3>
+        <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-200 mb-1">今日核心营养素比例</h3>
         
         <div className="space-y-3 font-sans">
           {/* Protein */}
           <div>
-            <div className="flex justify-between text-xs mb-1">
+            <div className="flex justify-between text-sm mb-1.5">
               <span className="font-bold text-zinc-700 dark:text-zinc-300">蛋白质 (增肌修护)</span>
               <span className="font-mono text-zinc-500 dark:text-zinc-400">
                 {totalProtein}g / <span className="text-zinc-400">{profile.targetProtein}g</span>
               </span>
             </div>
-            <div className="w-full h-2 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+            <div className="w-full h-2.5 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
               <div 
                 className="h-full bg-orange-500 rounded-full transition-all duration-300"
                 style={{ width: `${Math.min(100, (totalProtein / profile.targetProtein) * 100)}%` }}
@@ -355,13 +355,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
           {/* Carbs */}
           <div>
-            <div className="flex justify-between text-xs mb-1">
+            <div className="flex justify-between text-sm mb-1.5">
               <span className="font-bold text-zinc-700 dark:text-zinc-300">碳水化合物 (运动供能)</span>
               <span className="font-mono text-zinc-500 dark:text-zinc-400">
                 {totalCarbs}g / <span className="text-zinc-400">{profile.targetCarbs}g</span>
               </span>
             </div>
-            <div className="w-full h-2 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+            <div className="w-full h-2.5 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
               <div 
                 className="h-full bg-amber-500 rounded-full transition-all duration-300"
                 style={{ width: `${Math.min(100, (totalCarbs / profile.targetCarbs) * 100)}%` }}
@@ -371,13 +371,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
           {/* Fats */}
           <div>
-            <div className="flex justify-between text-xs mb-1">
-              <span className="font-bold text-zinc-700 dark:text-zinc-300">脂肪 (维持荷尔蒙)</span>
+            <div className="flex justify-between text-sm mb-1.5">
+              <span className="font-bold text-zinc-700 dark:text-zinc-300">脂肪 (维持荷尔门)</span>
               <span className="font-mono text-zinc-500 dark:text-zinc-400">
                 {totalFat}g / <span className="text-zinc-400">{profile.targetFat}g</span>
               </span>
             </div>
-            <div className="w-full h-2 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+            <div className="w-full h-2.5 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
               <div 
                 className="h-full bg-emerald-500 rounded-full transition-all duration-300"
                 style={{ width: `${Math.min(100, (totalFat / profile.targetFat) * 100)}%` }}
@@ -391,17 +391,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
       <div className="bg-sky-50/50 dark:bg-sky-950/15 border border-sky-100/60 dark:border-sky-900/30 rounded-3xl p-5">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-2">
-            <div className="p-2 bg-sky-100 dark:bg-sky-900/50 rounded-2xl text-blue-600 dark:text-sky-400">
-              <Droplet size={18} />
+            <div className="p-2.5 bg-sky-100 dark:bg-sky-900/50 rounded-2xl text-blue-600 dark:text-sky-400">
+              <Droplet size={20} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-sky-950 dark:text-sky-300">智能积木补水杯</h4>
-              <p className="text-[11px] text-sky-700/80 dark:text-sky-400/80">每日推荐摄入 2,000 毫升</p>
+              <h4 className="text-base font-bold text-sky-950 dark:text-sky-300">智能积木补水杯</h4>
+              <p className="text-xs text-sky-700/80 dark:text-sky-400/80">每日推荐摄入 2,000 毫升</p>
             </div>
           </div>
           <div className="text-right">
-            <span className="text-lg font-black font-mono text-blue-600 dark:text-sky-400">{waterVolume}</span>
-            <span className="text-xs text-zinc-400 font-mono ml-0.5">/2000 ml</span>
+            <span className="text-xl font-black font-mono text-blue-600 dark:text-sky-400">{waterVolume}</span>
+            <span className="text-sm text-zinc-400 font-mono ml-0.5">/2000 ml</span>
           </div>
         </div>
 
@@ -421,21 +421,21 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <div className="flex-1 grid grid-cols-2 gap-2">
             <button 
               onClick={() => onAddWater(250)}
-              className="py-2.5 px-3 bg-white dark:bg-zinc-900 border border-sky-100 dark:border-zinc-800 rounded-2xl text-xs font-bold text-blue-600 dark:text-sky-400 active:scale-95 transition-transform flex items-center justify-center gap-1 shadow-2xs"
+              className="py-3 px-3 bg-white dark:bg-zinc-900 border border-sky-100 dark:border-zinc-800 rounded-2xl text-sm font-bold text-blue-600 dark:text-sky-400 active:scale-95 transition-transform flex items-center justify-center gap-1 shadow-2xs"
             >
-              <Plus size={13} /> 250 ml
+              <Plus size={14} /> 250 ml
             </button>
             <button 
               onClick={() => onAddWater(500)}
-              className="py-2.5 px-3 bg-white dark:bg-zinc-900 border border-sky-100 dark:border-zinc-800 rounded-2xl text-xs font-bold text-blue-600 dark:text-sky-400 active:scale-95 transition-transform flex items-center justify-center gap-1 shadow-2xs"
+              className="py-3 px-3 bg-white dark:bg-zinc-900 border border-sky-100 dark:border-zinc-800 rounded-2xl text-sm font-bold text-blue-600 dark:text-sky-400 active:scale-95 transition-transform flex items-center justify-center gap-1 shadow-2xs"
             >
-              <Plus size={13} /> 500 ml
+              <Plus size={14} /> 500 ml
             </button>
             <button 
               onClick={onClearWater}
-              className="col-span-2 py-1.5 text-[10px] uppercase tracking-wider font-extrabold text-zinc-400 hover:text-rose-500 dark:text-zinc-500 transition-colors flex items-center justify-center gap-1"
+              className="col-span-2 py-1.5 text-xs uppercase tracking-wider font-extrabold text-zinc-400 hover:text-rose-500 dark:text-zinc-500 transition-colors flex items-center justify-center gap-1"
             >
-              <RefreshCw size={9} /> 重置今日饮水
+              <RefreshCw size={11} /> 重置今日饮水
             </button>
           </div>
         </div>
@@ -445,18 +445,18 @@ export const Dashboard: React.FC<DashboardProps> = ({
       <div className="bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-3xl p-5 space-y-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="p-2 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 rounded-2xl">
-              <Scale size={18} />
+            <div className="p-2.5 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 rounded-2xl">
+              <Scale size={20} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-zinc-800 dark:text-zinc-200">体重监测曲线</h4>
-              <p className="text-[11px] text-zinc-400 font-medium">当前 {currentWeight} kg</p>
+              <h4 className="text-base font-bold text-zinc-800 dark:text-zinc-200">体重监测曲线</h4>
+              <p className="text-xs text-zinc-400 font-medium">当前 {currentWeight} kg</p>
             </div>
           </div>
 
           <button
             onClick={() => setShowWeightInput(!showWeightInput)}
-            className="p-1 px-3 bg-zinc-50 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 rounded-full font-bold text-[11px] hover:bg-zinc-100 transition-colors"
+            className="p-1.5 px-3.5 bg-zinc-50 dark:bg-zinc-800/80 text-zinc-650 dark:text-zinc-300 rounded-full font-bold text-xs hover:bg-zinc-100 transition-colors"
           >
             {showWeightInput ? '取消' : '记体重'}
           </button>
@@ -495,17 +495,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
         {weightLogs.length > 0 ? (
           <div className="pt-2">
             {renderWeightGraph()}
-            <div className="mt-4 flex justify-between items-center text-xs text-zinc-500 dark:text-zinc-400 border-t border-zinc-100 dark:border-zinc-800/80 pt-3">
+            <div className="mt-4 flex justify-between items-center text-sm text-zinc-500 dark:text-zinc-400 border-t border-zinc-100 dark:border-zinc-800/80 pt-3">
               <span>区间内重力浮动</span>
-              <span className="flex items-center gap-1 font-bold font-mono">
+              <span className="flex items-center gap-1 font-bold font-mono text-sm">
                 {weightChange > 0 ? (
                   <>
-                    <TrendingUp size={14} className="text-amber-500" />
+                    <TrendingUp size={15} className="text-amber-500" />
                     <span className="text-amber-500">+{weightChange} kg</span>
                   </>
                 ) : weightChange < 0 ? (
                   <>
-                    <TrendingDown size={14} className="text-emerald-500" />
+                    <TrendingDown size={15} className="text-emerald-500" />
                     <span className="text-emerald-500">{weightChange} kg</span>
                   </>
                 ) : (
@@ -521,17 +521,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
       {/* 7. Beautiful health recommendation prompts */}
       <div className="space-y-3">
-        <h4 className="text-xs uppercase font-semibold tracking-wider text-zinc-400 px-1">智能健康向导 Recommendation</h4>
+        <h4 className="text-sm uppercase font-semibold tracking-wider text-zinc-400 px-1">智能健康向导 Recommendation</h4>
         
         <div className="grid gap-3">
           {getMotivationalTips().map((tip, idx) => (
             <div key={idx} className={`p-4 rounded-2xl ${tip.bg} border border-transparent flex items-start gap-3`}>
-              <Sparkles className={`shrink-0 mt-0.5 ${tip.color}`} size={16} />
+              <Sparkles className={`shrink-0 mt-0.5 ${tip.color}`} size={18} />
               <div>
-                <h5 className={`text-xs font-bold leading-none mb-1 text-zinc-800 dark:text-zinc-200`}>
+                <h5 className={`text-sm font-bold leading-none mb-1 text-zinc-800 dark:text-zinc-200`}>
                   {tip.title}
                 </h5>
-                <p className="text-[11px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+                <p className="text-xs leading-relaxed text-zinc-650 dark:text-zinc-400">
                   {tip.desc}
                 </p>
               </div>
