@@ -1,0 +1,6 @@
+{
+  "name": "FitRing iOS Fitness",
+  "description": "iOS-style lightweight fitness check-in and macro nutrition calculator with interactive health circles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
